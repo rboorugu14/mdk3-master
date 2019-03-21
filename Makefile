@@ -1,5 +1,5 @@
 CFLAGS		= -g -O3 -w
-LINKFLAGS	= -lpthread
+LINKFLAGS	= -pthread
 
 DESTDIR		=
 PREFIX		= /usr/local
@@ -23,10 +23,10 @@ mdk3: mdk3.c $(OSD)/libosdep.a
 
 install: mdk3
 	$(MAKE) -C $(OSD) install
-	install -D -m 0755 $^ $(DESTDIR)/$(SBINDIR)/$^
+	#install -D -m 0755 $^ $(DESTDIR)/$(SBINDIR)/$^
 
 clean:
-	rm -f mdk3
+	#rm -f mdk3
 	$(MAKE) -C $(OSD) clean
 
 distclean: clean
